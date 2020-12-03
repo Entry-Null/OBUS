@@ -88,16 +88,16 @@ function insertcomment(orig, force)
     if math.random(7) >= 2 and not force then
         return orig
     end
-    local x = "\226\1ぢ々ぐギぢぎ々ギ99\\104\\97\\28\174"
+    local x = "\226\1ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®99\\104\\97\\28\174"
     if options.MemeComments and math.random(2,2) > 1 then
         x = x .. string.reverse(me[math.random(#me)]) .. x
     else
         for loop = 1, math.random(3, 10) do
-            x = x .. ({"I", "l"})[math.random(2)] .. "々ㇱぢ々ぐギぢぎ々ギㇱ々\226\12も8\148ㇱぢ々ぐギぢぎ々ギㇱ々174\226\226\199\\104\\97\\28\174"
+            x = x .. ({"I", "l"})[math.random(2)] .. "ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…\226\12ã‚‚8\148ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…174\226\226\199\\104\\97\\28\174"
         end
     end
     print("Comment:" .. x)
-    return orig .. "--[[ももFuももn々ㇱぢ々ぐギぢぎ々ギㇱ々ction(??々ㇱぢ々ぐギぢぎ々ギㇱ々????も?????(IllI々ㇱぢ々ぐギぢぎ々ギㇱ々IIIllII))\226\128\1々ㇱぢ々ぐギぢぎ々ギㇱ々74\226\128\174\226\128\174\99\\104\\97\\226\128\148\174\226\128\17" .. (x) .. "\226\128\174]] "
+    return orig .. "--[[ã‚‚ã‚‚Fuã‚‚ã‚‚nã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…ction(??ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…????ã‚‚?????(IllIã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…IIIllII))\226\128\1ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…74\226\128\174\226\128\174\99\\104\\97\\226\128\148\174\226\128\17" .. (x) .. "\226\128\174]] "
 end
 
 local function extract(code, ast)
@@ -123,7 +123,7 @@ local function extract(code, ast)
             end) .. "\""
         end
         local index = 0 -- \\115\\116\\114\\105\\110\\103
-        return ("_ENV[\"々ㇱぢ々ぐギぢぎ々ギㇱ々???々ㇱぢ々ぐギぢぎ々ギㇱ々????????\\115\\11々ㇱぢ々ももぐギぢぎ々ギㇱ々6\\114\\105\\110\\103\"][\"\\99\\104々ㇱぢ々ぐギぢぎ々ギㇱ々\\97\\114\"](" .. str:gsub(".", function(c)
+        return ("_ENV[\"ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…???ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…????????\\115\\11ã€…ã‡±ã¢ã€…ã‚‚ã‚‚ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…6\\114\\105\\110\\103\"][\"\\99\\104ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…\\97\\114\"](" .. str:gsub(".", function(c)
             index = 1 + (index or 0)
             if index > 1 then
                 return ", " .. hex(string.byte(c))
@@ -419,7 +419,7 @@ local success, ast = ParseLua(code)
 if not success then
     local out = ecall(io.open, options.Output, "w")
     if out then
-        out:write("_ENV = assert(_ENV or (getfenv and getfenv()), \"々ㇱぢ々ぐギぢぎ々ギㇱ々Envrionment 々ㇱぢ々ぐギ missing.\")", code):close()
+        out:write("_ENV = assert(_ENV or (getfenv and getfenv()), \"ã€…ã‡±ã¢ã€…ãã‚®ã¢ãŽã€…ã‚®ã‡±ã€…Envrionment ã€…ã‡±ã¢ã€…ãã‚® missing.\")", code):close()
     end
     error("Failed to parse code: " .. ast)
 end
@@ -435,16 +435,16 @@ if options.Comments and options.Comments > 0 then
         if math.random(7) >= 2 then
             return s
         end
-        local x = "\226ㇱぢ々ぐギ128\174"
+        local x = "\226ã‡±ã¢ã€…ãã‚®128\174"
         if options.MemeComments and math.random(2,2) > 1 then
             x = x .. string.reverse(me[math.random(#me)]) .. x
         else
             for loop = 1, math.random(3, 10) do
-                x = x .. ({"I", "l"})[math.random(2)] .. "々ㇱぢ々ぐギ\226\128\174"
+                x = x .. ({"I", "l"})[math.random(2)] .. "ã€…ã‡±ã¢ã€…ãã‚®\226\128\174"
             end
         end
         print("Comment:" .. x)
-        return s .. "--[[" .. (x) .. "々ㇱぢ々ぐギ\226\128\174]] "
+        return s .. "--[[" .. (x) .. "ã€…ã‡±ã¢ã€…ãã‚®\226\128\174]] "
     end)
 end
 print("Finished.")
@@ -457,7 +457,7 @@ source = code
         return error("Couldnt find/create " .. options.Output .. " for reading.")
     end
     --out:write("function _ENV.getfenv()return _ENV end" .. source):close()
-    out:write("--//々ㇱぢ々ぐ々ㇱぢ々ぐギギ \n \n" .. insertcomment(nil, true) .. "_ENV = assert(" .. insertcomment(nil, true) .. "_ENV or" .. insertcomment(nil, true) .. " (getfenv " .. insertcomment(nil, true) .. "and" .. insertcomment(nil, true) .. " getfenv()" .. insertcomment(nil, true) .. "), \"Envrionment missing.\")" .. insertcomment(nil, true) .. "--[[Envrionment missing.]]", source--[[:gsub("\t", function()
+    out:write("--//ã€…ã‡±ã¢ã€…ãã€…ã‡±ã¢ã€…ãã‚®ã‚® \n \n" .. insertcomment(nil, true) .. "_ENV = assert(" .. insertcomment(nil, true) .. "_ENV or" .. insertcomment(nil, true) .. " (getfenv " .. insertcomment(nil, true) .. "and" .. insertcomment(nil, true) .. " getfenv()" .. insertcomment(nil, true) .. "), \"Envrionment missing.\")" .. insertcomment(nil, true) .. "--[[Envrionment missing.]]", source--[[:gsub("\t", function()
         return " " .. insertcomment() .. " "
     end)]])
     out:close()
